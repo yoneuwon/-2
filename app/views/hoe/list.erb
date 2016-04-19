@@ -1,0 +1,10 @@
+<h1>지난글</h1>
+<% @every_post.each do |p|%>
+제목: <%= p.title %> <br>
+내용: <%= p.content %> <br>
+보낸 시간 : <%= p.created_at.in_time_zone("Asia/Seoul").strftime("%Y년%m월%d일 %H시%M분%S초") %><br>
+<a href = "/update_view/<%=p.id%>">[수정]</a>
+<a href = "/destroy/<%=p.id%>">[삭제]</a>
+<hr>
+<%end%>
+<h1><a href="/">게시판켜기</a></h1>
